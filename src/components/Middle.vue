@@ -19,6 +19,7 @@ export default {
   methods: {
     open() {
       this.isOpen = true;
+      setTimeout(() => (this.isOpen = false), 1000);
     }
   }
 };
@@ -37,18 +38,17 @@ export default {
     overflow: hidden;
     & > div {
       height: 50%;
-      transition: all 0.3s ease-out;
     }
     .inner1 {
       background: url("../assets/img/yao.png") no-repeat 50% 200% #323340;
       &.open {
-        transform: translateY(-14vh)
+        animation: moveA 1s;
       }
     }
     .inner2 {
       background: url("../assets/img/yao.png") no-repeat 50% -110% #323340;
       &.open {
-        transform: translateY(14vh)
+        animation: moveB 1s;
       }
     }
   }
@@ -58,6 +58,29 @@ export default {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes moveA {
+  0% {
+    transform: translateY(0vh);
+  }
+  50% {
+    transform: translateY(-14vh);
+  }
+  100% {
+    transform: translateY(0vh);
+  }
+}
+@keyframes moveB {
+  0% {
+    transform: translateY(0vh);
+  }
+  50% {
+    transform: translateY(14vh);
+  }
+  100% {
+    transform: translateY(0vh);
   }
 }
 </style>
