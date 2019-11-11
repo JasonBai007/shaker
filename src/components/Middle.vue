@@ -18,7 +18,11 @@ export default {
   },
   methods: {
     open() {
+      // 先清除掉上次摇到的人
+      this.$bus.$emit("clear");
+      // 裂开
       this.isOpen = true;
+      // 合上后，清除class中的open，然后释放一个事件
       setTimeout(() => {
         this.isOpen = false;
         this.$bus.$emit("getOne", {

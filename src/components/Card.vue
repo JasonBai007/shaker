@@ -1,5 +1,5 @@
 <template>
-  <div class="card-wrap" v-show="isShow">
+  <div class="card-wrap animated fadeInDown" v-if="isShow">
     <img src="../assets/img/setting.png" alt />
     <div class="right">
       <span>{{obj.name}}</span>
@@ -27,11 +27,22 @@ export default {
     this.$bus.$on("getOne", data => {
       this.showCard(data);
     });
+    this.$bus.$on("clear", () => {
+      this.hideCard();
+    });
   },
   methods: {
     showCard(data) {
       this.obj = data;
       this.isShow = true;
+    },
+    hideCard() {
+      this.obj = {
+        name: "",
+        sex: 1,
+        desc: ""
+      };
+      this.isShow = false;
     }
   }
 };

@@ -1,7 +1,7 @@
 <template>
   <div class="header-wrap">
-    <span>抖一抖</span>
-    <img src="../assets/img/setting.png" alt />
+    <span class="animated jello">抖一抖</span>
+    <img class="animated rotateIn" src="../assets/img/setting.png" alt />
   </div>
 </template>
 
