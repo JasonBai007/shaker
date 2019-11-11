@@ -2,18 +2,21 @@
   <div id="app">
     <top-header></top-header>
     <middle></middle>
+    <card></card>
   </div>
 </template>
 
 <script>
-import TopHeader from "./components/TopHeader.vue";
-import Middle from "./components/Middle.vue";
+import TopHeader from "./components/TopHeader";
+import Middle from "./components/Middle";
+import Card from "./components/Card";
 
 export default {
   name: "app",
   components: {
     TopHeader,
-    Middle
+    Middle,
+    Card
   }
 };
 </script>
