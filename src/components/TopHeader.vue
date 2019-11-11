@@ -1,7 +1,7 @@
 <template>
-  <div class="top">
+  <div class="header-wrap">
     <span>抖一抖</span>
-    <span>icon</span>
+    <img src="../assets/img/setting.png" alt />
   </div>
 </template>
 
@@ -12,10 +12,14 @@ export default {
 </script>
 
 <style lang="less">
-.top {
+.header-wrap {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 20px;
   padding: 4vw;
+  img {
+    width: 26px;
+  }
 }
 </style>
