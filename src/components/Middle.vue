@@ -1,8 +1,8 @@
 <template>
   <div class="wrap">
     <div class="splits">
-      <div class="inner1"></div>
-      <div class="inner2"></div>
+      <div :class="[isOpen? 'open': '', 'inner1']" @click="open"></div>
+      <div :class="[isOpen? 'open': '', 'inner2']"></div>
     </div>
     <img src="../assets/img/bg.jpg" id="bg-img" />
   </div>
@@ -10,7 +10,17 @@
 
 <script>
 export default {
-  name: "middle"
+  name: "middle",
+  data() {
+    return {
+      isOpen: false
+    };
+  },
+  methods: {
+    open() {
+      this.isOpen = true;
+    }
+  }
 };
 </script>
 
@@ -24,14 +34,22 @@ export default {
     width: 100%;
     height: 100%;
     z-index: 1;
+    overflow: hidden;
     & > div {
       height: 50%;
+      transition: all 0.3s ease-out;
     }
     .inner1 {
       background: url("../assets/img/yao.png") no-repeat 50% 200% #323340;
+      &.open {
+        transform: translateY(-14vh)
+      }
     }
     .inner2 {
       background: url("../assets/img/yao.png") no-repeat 50% -110% #323340;
+      &.open {
+        transform: translateY(14vh)
+      }
     }
   }
   #bg-img {
