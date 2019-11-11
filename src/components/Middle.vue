@@ -19,7 +19,14 @@ export default {
   methods: {
     open() {
       this.isOpen = true;
-      setTimeout(() => (this.isOpen = false), 1000);
+      setTimeout(() => {
+        this.isOpen = false;
+        this.$bus.$emit("getOne", {
+          name: "白总",
+          sex: 1,
+          desc: "白总辛苦了"
+        });
+      }, 1000);
     }
   }
 };

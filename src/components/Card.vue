@@ -1,18 +1,39 @@
 <template>
-  <div class="card-wrap">
+  <div class="card-wrap" v-show="isShow">
     <img src="../assets/img/setting.png" alt />
     <div class="right">
-      <span>川普总统</span>
-      <img src="../assets/img/man.png" alt />
-      <!-- <img src="../assets/img/woman.png" alt /> -->
-      <p>翻脸比翻书快</p>
+      <span>{{obj.name}}</span>
+      <img v-if="obj.sex" src="../assets/img/man.png" alt />
+      <img v-else src="../assets/img/woman.png" alt />
+      <p>{{obj.desc}}</p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "card"
+  name: "card",
+  data() {
+    return {
+      isShow: false,
+      obj: {
+        name: "",
+        sex: 1,
+        desc: ""
+      }
+    };
+  },
+  mounted() {
+    this.$bus.$on("getOne", data => {
+      this.showCard(data);
+    });
+  },
+  methods: {
+    showCard(data) {
+      this.obj = data;
+      this.isShow = true;
+    }
+  }
 };
 </script>
 
