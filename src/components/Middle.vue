@@ -23,11 +23,15 @@ export default {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: red;
     z-index: 1;
     & > div {
       height: 50%;
-      background: green;
+    }
+    .inner1 {
+      background: url("../assets/img/yao.png") no-repeat 50% 200% #323340;
+    }
+    .inner2 {
+      background: url("../assets/img/yao.png") no-repeat 50% -110% #323340;
     }
   }
   #bg-img {
