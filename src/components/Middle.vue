@@ -52,13 +52,13 @@ export default {
       height: 50%;
     }
     .inner1 {
-      background: url("../assets/img/yao.png") no-repeat 50% 200% #323340;
+      background: url(/img/yao.54c609ee.png) no-repeat 26vw 26vh #323340;
       &.open {
         animation: moveA 1s;
       }
     }
     .inner2 {
-      background: url("../assets/img/yao.png") no-repeat 50% -110% #323340;
+      background: url("../assets/img/yao.png") no-repeat 26vw -14vh #323340;
       &.open {
         animation: moveB 1s;
       }
