@@ -39,7 +39,7 @@ export default {
 
 <style lang="less">
 .wrap {
-  height: 80vh;
+  height: 65vh;
   background: #292c31;
   position: relative;
   .splits {
@@ -52,13 +52,13 @@ export default {
       height: 50%;
     }
     .inner1 {
-      background: url(/img/yao.54c609ee.png) no-repeat 26vw 26vh #323340;
+      background: url(/img/yao.54c609ee.png) no-repeat 21vw 16vh #323340;
       &.open {
         animation: moveA 1s;
       }
     }
     .inner2 {
-      background: url("../assets/img/yao.png") no-repeat 26vw -14vh #323340;
+      background: url("../assets/img/yao.png") no-repeat 21vw -17vh #323340;
       &.open {
         animation: moveB 1s;
       }

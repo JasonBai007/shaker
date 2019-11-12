@@ -53,7 +53,7 @@ export default {
 <style lang="less">
 .card-wrap {
   position: absolute;
-  bottom: 16vh;
+  bottom: 12vh;
   z-index: 2;
   background: #4d4e58;
   width: 86vw;
@@ -64,6 +64,7 @@ export default {
   box-sizing: border-box;
   & > img {
     width: 14vw;
+    height: 14vw;
     border-radius: 5px;
   }
   .right {
