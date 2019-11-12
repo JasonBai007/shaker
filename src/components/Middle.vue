@@ -4,7 +4,7 @@
       <div :class="[isOpen? 'open': '', 'inner1']" @click="open"></div>
       <div :class="[isOpen? 'open': '', 'inner2']" @click="open"></div>
     </div>
-    <img src="../assets/img/bg.jpg" id="bg-img" />
+    <img src="../assets/img/bg.jpg" id="bg-img" />    
   </div>
 </template>
 
@@ -14,10 +14,38 @@ export default {
   name: "middle",
   data() {
     return {
-      isOpen: false
+      isOpen: false,
+      last_update: 0,
+      x: 0,
+      y: 0,
+      z: 0
     };
   },
+  mounted() {
+    //运动事件监听
+    if (window.DeviceMotionEvent) {
+      window.addEventListener("devicemotion", this.deviceMotionHandler);
+    }
+  },
   methods: {
+    deviceMotionHandler(eventData) {
+      let curTime = new Date().getTime();
+      let diffTime = curTime - this.last_update;
+      // 每隔1s判断一下
+      if (diffTime > 1000) {
+        this.last_update = curTime;
+        // 获取重力加速度对象
+        let acceleration = eventData.accelerationIncludingGravity;
+        // 拿到三个方向上的重力加速度的正整数部分，摇动的时候会超过10
+        this.x = Math.floor(Math.abs(acceleration.x));
+        this.y = Math.floor(Math.abs(acceleration.y));
+        this.z = Math.floor(Math.abs(acceleration.z));
+        // 摇晃幅度如果特别大，就open
+        if (this.x > 10 || this.y > 10 || this.z > 10) {
+          this.open();
+        }
+      }
+    },
     open() {
       // 先清除掉上次摇到的人
       this.$bus.$emit("clear");
