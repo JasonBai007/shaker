@@ -4,7 +4,7 @@
       <div :class="[isOpen? 'open': '', 'inner1']" @click="open"></div>
       <div :class="[isOpen? 'open': '', 'inner2']" @click="open"></div>
     </div>
-    <img src="../assets/img/bg.jpg" id="bg-img" />    
+    <img src="../assets/img/bg.jpg" id="bg-img" />
   </div>
 </template>
 
@@ -47,6 +47,12 @@ export default {
       }
     },
     open() {
+      // 振动300ms
+      if (navigator.vibrate) {
+        navigator.vibrate(300);
+      } else if (navigator.webkitVibrate) {
+        navigator.webkitVibrate(300);
+      }
       // 先清除掉上次摇到的人
       this.$bus.$emit("clear");
       // 裂开
@@ -80,13 +86,15 @@ export default {
       height: 50%;
     }
     .inner1 {
-      background: url(/img/yao.54c609ee.png) no-repeat 21vw 16vh #323340;
+      background: url(/img/yao.54c609ee.png) no-repeat 27vw 16vh #323340;
+      background-size: 45%;
       &.open {
         animation: moveA 1s;
       }
     }
     .inner2 {
-      background: url("../assets/img/yao.png") no-repeat 21vw -17vh #323340;
+      background: url("../assets/img/yao.png") no-repeat 27vw -17vh #323340;
+      background-size: 45%;
       &.open {
         animation: moveB 1s;
       }

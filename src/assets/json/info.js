@@ -22,5 +22,11 @@ export default [
     sex: 0,
     url: require("@/assets/img/p4.jpg"),
     desc: "我太难了！"
+  },
+  {
+    name: "杨超月",
+    sex: 0,
+    url: require("@/assets/img/p5.jpg"),
+    desc: "你今天又写了多少个bug？"
   }
 ];
