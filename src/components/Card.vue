@@ -62,6 +62,7 @@ export default {
   display: flex;
   padding: 2vw;
   box-sizing: border-box;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
   & > img {
     width: 14vw;
     height: 14vw;

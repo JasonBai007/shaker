@@ -1,6 +1,6 @@
 <template>
   <div class="header-wrap">
-    <span class="animated jello">抖一抖</span>
+    <span class="animated wobble">抖一抖</span>
     <img class="animated rotateIn" src="../assets/img/setting.png" alt />
   </div>
 </template>
@@ -16,10 +16,10 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 20px;
+  font-size: 18px;
   padding: 4vw;
   img {
-    width: 26px;
+    width: 24px;
   }
 }
 </style>
