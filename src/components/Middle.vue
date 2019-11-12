@@ -2,13 +2,14 @@
   <div class="wrap">
     <div class="splits">
       <div :class="[isOpen? 'open': '', 'inner1']" @click="open"></div>
-      <div :class="[isOpen? 'open': '', 'inner2']"></div>
+      <div :class="[isOpen? 'open': '', 'inner2']" @click="open"></div>
     </div>
     <img src="../assets/img/bg.jpg" id="bg-img" />
   </div>
 </template>
 
 <script>
+import people from "@/assets/json/info.js";
 export default {
   name: "middle",
   data() {
@@ -23,13 +24,13 @@ export default {
       // 裂开
       this.isOpen = true;
       // 合上后，清除class中的open，然后释放一个事件
+      this.sendInfo();
+    },
+    sendInfo() {
       setTimeout(() => {
         this.isOpen = false;
-        this.$bus.$emit("getOne", {
-          name: "白总",
-          sex: 1,
-          desc: "白总辛苦了"
-        });
+        let i = Math.floor(Math.random() * people.length);
+        this.$bus.$emit("getOne", people[i]);
       }, 1000);
     }
   }

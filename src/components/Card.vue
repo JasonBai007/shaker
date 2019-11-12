@@ -1,10 +1,10 @@
 <template>
-  <div class="card-wrap animated fadeInDown" v-if="isShow">
-    <img src="../assets/img/setting.png" alt />
+  <div class="card-wrap animated fadeInDown" v-show="isShow">
+    <img :src="obj.url" />
     <div class="right">
       <span>{{obj.name}}</span>
-      <img v-if="obj.sex" src="../assets/img/man.png" alt />
-      <img v-else src="../assets/img/woman.png" alt />
+      <img v-if="obj.sex" src="../assets/img/man.png" />
+      <img v-else src="../assets/img/woman.png" />
       <p>{{obj.desc}}</p>
     </div>
   </div>
@@ -19,6 +19,7 @@ export default {
       obj: {
         name: "",
         sex: 1,
+        url: require("@/assets/img/default.jpg"),
         desc: ""
       }
     };
@@ -40,6 +41,7 @@ export default {
       this.obj = {
         name: "",
         sex: 1,
+        url: require("@/assets/img/default.jpg"),
         desc: ""
       };
       this.isShow = false;
@@ -62,11 +64,12 @@ export default {
   box-sizing: border-box;
   & > img {
     width: 14vw;
+    border-radius: 5px;
   }
   .right {
     flex-grow: 1;
     text-align: left;
-    margin-left: 2.5vw;
+    margin-left: 3vw;
     padding-top: 9px;
     img {
       width: 4vw;
