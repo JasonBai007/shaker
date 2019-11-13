@@ -41,7 +41,7 @@ export default {
         this.y = Math.floor(Math.abs(acceleration.y));
         this.z = Math.floor(Math.abs(acceleration.z));
         // 摇晃幅度如果特别大，就open
-        if (this.x > 5 || this.y > 5 || this.z > 10) {
+        if (this.x > 8 || this.y > 8 || this.z > 10) {
           this.open();
         }
       }
