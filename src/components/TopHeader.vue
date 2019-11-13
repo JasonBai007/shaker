@@ -1,13 +1,18 @@
 <template>
   <div class="header-wrap">
     <span class="animated wobble">抖一抖</span>
-    <img class="animated rotateIn" src="../assets/img/setting.png" alt />
+    <img class="animated swing" src="../assets/img/setting.png" alt @click="gotoGithub" />
   </div>
 </template>
 
 <script>
 export default {
-  name: "TopHeader"
+  name: "TopHeader",
+  methods: {
+    gotoGithub() {
+      window.open("https://github.com/JasonBai007/shaker");
+    }
+  }
 };
 </script>
 

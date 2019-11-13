@@ -19,7 +19,7 @@ export default {
       obj: {
         name: "",
         sex: 1,
-        url: require("@/assets/img/default.jpg"),
+        url: "",
         desc: ""
       }
     };
@@ -41,7 +41,7 @@ export default {
       this.obj = {
         name: "",
         sex: 1,
-        url: require("@/assets/img/default.jpg"),
+        url: "",
         desc: ""
       };
       this.isShow = false;
@@ -62,7 +62,7 @@ export default {
   display: flex;
   padding: 2vw;
   box-sizing: border-box;
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
   & > img {
     width: 14vw;
     height: 14vw;

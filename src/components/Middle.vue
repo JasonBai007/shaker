@@ -93,7 +93,7 @@ export default {
       }
     }
     .inner2 {
-      background: url(../assets/img/yao.png) no-repeat 27vw -17vh #323340;
+      background: url(../assets/img/yao.png) no-repeat 27vw -16.5vh #323340;
       background-size: 45%;
       &.open {
         animation: moveB 1s;
@@ -129,6 +129,45 @@ export default {
   }
   100% {
     transform: translateY(0vh);
+  }
+}
+
+// 兼容iphone6，iphone7，iphone8s
+@media (device-height: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  .wrap {
+    height: 70vh;
+  }
+  .wrap .splits .inner1 {
+    background: url(../assets/img/yao.png) no-repeat 24vw 20vh #323340;
+  }
+  .wrap .splits .inner2 {
+    background: url(../assets/img/yao.png) no-repeat 24vw -15vh #323340;
+  }
+}
+
+// 兼容iphone6 Plus,iphone7 Plus,iphone8 Plus：
+@media (device-height: 736px) and (-webkit-min-device-pixel-ratio: 2) {
+  .wrap {
+    height: 70vh;
+  }
+  .wrap .splits .inner1 {
+    background: url(../assets/img/yao.png) no-repeat 24vw 20vh #323340;
+  }
+  .wrap .splits .inner2 {
+    background: url(../assets/img/yao.png) no-repeat 24vw -15vh #323340;
+  }
+}
+
+// 兼容iphoneX
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .wrap {
+    height: 70vh;
+  }
+  .wrap .splits .inner1 {
+    background: url(../assets/img/yao.png) no-repeat 24vw 22vh #323340;
+  }
+  .wrap .splits .inner2 {
+    background: url(../assets/img/yao.png) no-repeat 24vw -13vh #323340;
   }
 }
 </style>
