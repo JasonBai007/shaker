@@ -74,7 +74,7 @@ export default {
     margin-left: 3vw;
     padding-top: 9px;
     img {
-      width: 4vw;
+      width: 4.5vw;
       display: inline-block;
       margin-left: 8px;
       vertical-align: bottom;
