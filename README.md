@@ -1,5 +1,5 @@
 # 抖一抖
-<img src="https://raw.githubusercontent.com/JasonBai007/shaker/main/qr.png" width="200px" />
+<img src="https://raw.githubusercontent.com/JasonBai007/shaker/master/qr.png" width="200px" />
 
 ## Project setup
 ```
